@@ -1,0 +1,11 @@
+.form{
+    margin-top: 10px!important;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}
+
+form{
+    width: 80%;
+}

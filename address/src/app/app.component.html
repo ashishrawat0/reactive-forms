@@ -1,0 +1,54 @@
+<form [formGroup]="addressForm" class="container mt-3">
+  <button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Address</button>
+  <section style="width: 70%;" class=" border mb-4 p-3 col-10"  formArrayName="addresses" 
+  *ngFor="let address of allAddress; let i = index;">
+  <div [formGroupName]="i">
+    <div class="row">
+      <div class="col-6">
+          <h4>Address {{i + 1}}</h4>
+      </div>
+      <div class="col-4 text-right">
+          <button type="button" class="btn btn-danger btn-sm" (click)="removeAddress(i)">Remove</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+          <div class="form-group">
+              <label>Address</label>
+              <input type="text" class="form-control" formControlName="address" placeholder="Address"/>
+            </div>
+      </div>
+      <div class="col-4">
+          <div class="form-group">
+              <label>Street</label>
+              <input type="text" class="form-control" formControlName="street" placeholder="Street"/>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+          <div class="form-group">
+              <label>City</label>
+              <input type="text" class="form-control" formControlName="city" placeholder="City"/>
+            </div>
+      </div>
+      <div class="col-4">
+          <div class="form-group">
+              <label>Country</label>
+              <select class="form-control" formControlName="country" placeholder="India">
+                <option value="india">India</option>
+                <option value="u.k">U.K</option>
+                <option value="itlay">Italy</option>
+                <option value="sri lanka">Sri Lanka</option>
+                <option value="nepal">Nepal</option>
+              </select>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="text-align: right; width: 70%;">
+  <input type="submit" class="btn btn-success" (click)="submitDetails(addressForm)" value="Submit"/>
+</div>
+</form>
